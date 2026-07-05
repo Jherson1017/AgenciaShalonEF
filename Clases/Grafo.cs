@@ -8,5 +8,6 @@ namespace Clases
 {
     public class Grafo
     {
+        public ListaVertices listaVertices = new ListaVertices();
     } 
 }

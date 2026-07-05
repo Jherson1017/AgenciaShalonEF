@@ -32,6 +32,19 @@ namespace Clases
                 aux.sig = nuevo;
             }
         }
+        public void Mostrar()
+        {
+            Arista aux = primero;
 
+            while (aux != null)
+            {
+                Console.Write(" -> " + aux.destino.dato.nombre +
+                              " (" + aux.distancia + " km)");
+
+                aux = aux.sig;
+            }
+
+            Console.WriteLine();
+        }
     }
 }
