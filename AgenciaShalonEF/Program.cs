@@ -48,8 +48,7 @@ namespace AgenciaShalonEF
                         break;
 
                     case 3:
-                        // Cuando tengas implementado Dijkstra
-                        // g.Dijkstra(0);
+                           g.Dijkstra(0);
                         Console.WriteLine("Opción en desarrollo.");
                         break;
 
