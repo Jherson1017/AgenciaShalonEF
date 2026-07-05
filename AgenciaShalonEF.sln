@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.37314.3 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgenciaShalonEF", "AgenciaShalonEF\AgenciaShalonEF.csproj", "{C3A7A554-F454-4556-A9E5-650FDAF29317}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases", "Clases\Clases.csproj", "{994F5D6C-7DE4-4895-8702-C8C06583DBB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C3A7A554-F454-4556-A9E5-650FDAF29317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3A7A554-F454-4556-A9E5-650FDAF29317}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3A7A554-F454-4556-A9E5-650FDAF29317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{994F5D6C-7DE4-4895-8702-C8C06583DBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{994F5D6C-7DE4-4895-8702-C8C06583DBB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{994F5D6C-7DE4-4895-8702-C8C06583DBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{994F5D6C-7DE4-4895-8702-C8C06583DBB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
