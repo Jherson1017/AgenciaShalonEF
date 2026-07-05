@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    internal class Arista
+    public class Arista
     {
+
+            public Vertice destino;
+            public int distancia;
+            public Arista sig;
+        }
+
     }
 }

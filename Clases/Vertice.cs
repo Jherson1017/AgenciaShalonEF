@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    internal class Vertice
+    public  class Vertice
     {
     }
 }
