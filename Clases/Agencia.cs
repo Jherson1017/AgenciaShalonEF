@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    internal class Agencia
+    public  class Agencia
     {
+        public string nombre;
+        public string ciudad;
+        public string codigo;
+        public override string ToString()
+        {
+            return $"{nombre} - {ciudad} ({codigo})";
+        }
     }
 }
