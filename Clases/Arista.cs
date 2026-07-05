@@ -8,11 +8,8 @@ namespace Clases
 {
     public class Arista
     {
-
-            public Vertice destino;
-            public int distancia;
-            public Arista sig;
-        }
-
+        public Vertice destino;
+        public int distancia;
+        public Arista sig = null;
     }
 }
