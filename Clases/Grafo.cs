@@ -233,15 +233,32 @@ public class Grafo
                 arista = arista.sig;
             }
         }
-
         Console.WriteLine("\n===== CAMINOS MÁS CORTOS =====\n");
 
-        for (int i = 0; i < n; i++)
+        bool[] usado = new bool[n];
+
+        for (int k = 0; k < n; k++)
         {
-            if (distancia[i] == 99999)
-                Console.WriteLine(vertices[i].dato.nombre + " : No hay ruta");
+            int min = 99999;
+            int pos = -1;
+
+            for (int i = 0; i < n; i++)
+            {
+                if (!usado[i] && distancia[i] < min)
+                {
+                    min = distancia[i];
+                    pos = i;
+                }
+            }
+
+            if (pos == -1) break;
+
+            usado[pos] = true;
+
+            if (distancia[pos] == 99999)
+                Console.WriteLine(vertices[pos].dato.nombre + " : No hay ruta");
             else
-                Console.WriteLine(vertices[i].dato.nombre + " : " + distancia[i] + " km");
+                Console.WriteLine(vertices[pos].dato.nombre + " : " + distancia[pos] + " km");
         }
     }
 

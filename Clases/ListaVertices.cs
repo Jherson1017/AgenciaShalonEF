@@ -13,12 +13,24 @@ namespace Clases
         public void Insertar(Agencia a)
         {
             Vertice nuevo = new Vertice();
-
             nuevo.dato = a;
+            nuevo.sig = null;
 
-            nuevo.sig = primero;
+            if (primero == null)
+            {
+                primero = nuevo;
+            }
+            else
+            {
+                Vertice aux = primero;
 
-            primero = nuevo;
+                while (aux.sig != null)
+                {
+                    aux = aux.sig;
+                }
+
+                aux.sig = nuevo;
+            }
         }
     }
 }
