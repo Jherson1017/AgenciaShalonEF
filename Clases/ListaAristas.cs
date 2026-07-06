@@ -35,13 +35,15 @@ namespace Clases
         public void Mostrar()
         {
             Arista aux = primero;
+            int i = 1;
 
             while (aux != null)
             {
-                Console.Write(" -> " + aux.destino.dato.nombre +
-                              " (" + aux.distancia + " km)");
+                Console.WriteLine(i + ". --> " + aux.destino.dato.nombre +
+                                  " (" + aux.distancia + " km)");
 
                 aux = aux.sig;
+                i++;
             }
 
             Console.WriteLine();

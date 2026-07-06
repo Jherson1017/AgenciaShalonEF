@@ -13,7 +13,7 @@ namespace Clases
         public string codigo;
         public override string ToString()
         {
-            return $"{nombre} -- {ciudad}    ({codigo})";
+            return $"{nombre} -- {ciudad}   ({codigo})";
         }
     }
 }

@@ -19,7 +19,7 @@ public class Grafo
             Agencia a = new Agencia();
             a.nombre = nombres[i];
             a.ciudad = ciudades[i];
-            a.codigo = " " + (i + 1)+ " ";
+            a.codigo = "0" + (i + 1);
 
             listaVertices.Insertar(a);
         }
@@ -117,14 +117,15 @@ public class Grafo
     }
     public void Recorrer(Vertice v, ref float total)
     {
-        Console.Clear();
-        Console.WriteLine("--------------------------------------");
+        Console.WriteLine("========== RECORRER ==========");
+        MostrarMatriz();
+        Console.WriteLine("------------------------------------------");
         Console.WriteLine("AGENCIA ACTUAL");
         Console.WriteLine(v.dato);
-        Console.WriteLine("--------------------------------------");
+        Console.WriteLine("------------------------------------------");
         Console.WriteLine("Rutas disponibles:");
         v.rutas.Mostrar();
-        Console.WriteLine("--------------------------------------");
+        Console.WriteLine("------------------------------------------");
         Console.Write("Ingrese la ruta (0 para salir): ");
 
         int op = int.Parse(Console.ReadLine());
