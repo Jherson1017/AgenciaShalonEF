@@ -5,8 +5,8 @@ public class Grafo
 {
     public ListaVertices listaVertices = new ListaVertices();
     int[,] ma;
-    string[] nombres ={ "Shalon Cajamarca", "Shalon Lima", "Shalon Trujillo", "Shalon Chiclayo",
-            "Shalon Arequipa","Shalon Cusco","Shalon Puno", "Shalon Tacna", "Shalon Huancayo",
+    string[] nombres ={ "Shalon Caj", "Shalon Lim", "Shalon Tru", "Shalon Chi",
+            "Shalon Are","Shalon Cus","Shalon Pun", "Shalon Tac", "Shalon Hua",
         };
 
     string[] ciudades ={ "Cajamarca", "Lima","Trujillo","Chiclayo","Arequipa", "Cusco",
@@ -19,7 +19,7 @@ public class Grafo
             Agencia a = new Agencia();
             a.nombre = nombres[i];
             a.ciudad = ciudades[i];
-            a.codigo = "0" + (i + 1);
+            a.codigo = " " + (i + 1)+ " ";
 
             listaVertices.Insertar(a);
         }
@@ -66,6 +66,7 @@ public class Grafo
         for (int i = 0; i < ma.GetLength(0); i++)
         {
             Console.Write(i + " ");
+
         }
 
         Console.WriteLine();
