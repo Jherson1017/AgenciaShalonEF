@@ -25,9 +25,11 @@ namespace AgenciaShalonEF
                 Console.WriteLine("=================================");
                 Console.WriteLine("   SISTEMA AGENCIA SHALON");
                 Console.WriteLine("=================================");
-                Console.WriteLine("1. Mostrar matriz");
-                Console.WriteLine("2. Recorrer agencias");
-                Console.WriteLine("3. Camino más corto (Dijkstra)");
+                Console.WriteLine("1. Mostrar agencias");
+                Console.WriteLine("2. Mostrar matriz");
+                Console.WriteLine("3. Contar conexiones");
+                Console.WriteLine("4. Recorrer");
+                Console.WriteLine("5. Dijkstra");
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("=================================");
                 Console.Write("Opción: ");
@@ -38,18 +40,25 @@ namespace AgenciaShalonEF
                 switch (op)
                 {
                     case 1:
-                        g.MostrarMatriz();
+                        g.MostrarAgencias();
                         break;
 
                     case 2:
+                        g.MostrarMatriz();
+                        break;
+
+                    case 3:
+                        g.ContarConexiones();
+                        break;
+
+                    case 4:
                         total = 0;
                         g.Recorrer(g.GetInicio(), ref total);
                         Console.WriteLine("\nDistancia total: " + total + " km");
                         break;
 
-                    case 3:
-                           g.Dijkstra(0);
-                        Console.WriteLine("Opción en desarrollo.");
+                    case 5:
+                        g.Dijkstra(0);
                         break;
 
                     case 0:
