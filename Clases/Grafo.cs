@@ -19,7 +19,7 @@ public class Grafo
             Agencia a = new Agencia();
             a.nombre = nombres[i];
             a.ciudad = ciudades[i];
-            a.codigo = "A00" + (i + 1);
+            a.codigo = "0" + (i + 1);
 
             listaVertices.Insertar(a);
         }
