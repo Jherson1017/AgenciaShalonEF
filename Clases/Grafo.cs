@@ -7,11 +7,10 @@ public class Grafo
     int[,] ma;
     string[] nombres ={ "Shalon Cajamarca", "Shalon Lima", "Shalon Trujillo", "Shalon Chiclayo",
             "Shalon Arequipa","Shalon Cusco","Shalon Puno", "Shalon Tacna", "Shalon Huancayo",
-            "Shalon Iquitos","Shalon Piura", "Shalon Tarapoto"
         };
 
     string[] ciudades ={ "Cajamarca", "Lima","Trujillo","Chiclayo","Arequipa", "Cusco",
-            "Puno", "Tacna", "Huancayo","Iquitos","Piura","Tarapoto"
+            "Puno", "Tacna", "Huancayo",
         };
     public Grafo(int cant)
     {
@@ -85,16 +84,17 @@ public class Grafo
     }
     public void CrearGrafo()
     {
-        Random r = new Random();
         Vertice temp_i = listaVertices.primero;
+
         for (int i = 0; i < ma.GetLength(0); i++)
         {
             Vertice temp_j = listaVertices.primero;
+
             for (int j = 0; j < ma.GetLength(1); j++)
             {
                 if (ma[i, j] == 1)
                 {
-                    int distancia = 0;
+                    int distancia;
 
                     if (i == j)
                     {
@@ -102,7 +102,7 @@ public class Grafo
                     }
                     else
                     {
-                        distancia = ((i + 1) + (j + 1)) * 100;
+                        distancia = (i + j + 2) * 100;
                     }
 
                     temp_i.rutas.Insertar(temp_j, distancia);
@@ -169,9 +169,15 @@ public class Grafo
 
         int[] distancia = new int[n];
         bool[] visitado = new bool[n];
+        Vertice[] vertices = new Vertice[n];
 
+        // Guardar los vértices en un arreglo para acceder por índice
+        Vertice aux = listaVertices.primero;
         for (int i = 0; i < n; i++)
         {
+            vertices[i] = aux;
+            aux = aux.sig;
+
             distancia[i] = 99999;
             visitado[i] = false;
         }
@@ -183,6 +189,7 @@ public class Grafo
             int min = 99999;
             int u = -1;
 
+            // Buscar el vértice con menor distancia
             for (int j = 0; j < n; j++)
             {
                 if (!visitado[j] && distancia[j] < min)
@@ -192,22 +199,49 @@ public class Grafo
                 }
             }
 
+            if (u == -1)
+                break;
+
             visitado[u] = true;
 
-            for (int v = 0; v < n; v++)
+            // Recorrer las aristas del vértice seleccionado
+            Arista arista = vertices[u].rutas.primero;
+
+            while (arista != null)
             {
-                if (ma[u,v] > 0 && !visitado[v] &&
-                    distancia[u] + ma[u, v] < distancia[v])
+                // Buscar el índice del vértice destino
+                int v = -1;
+
+                for (int k = 0; k < n; k++)
                 {
-                    distancia[v] = distancia[u] + ma[u, v];
+                    if (vertices[k] == arista.destino)
+                    {
+                        v = k;
+                        break;
+                    }
                 }
+
+                // Actualizar la distancia mínima
+                if (v != -1 && !visitado[v])
+                {
+                    if (distancia[u] + arista.distancia < distancia[v])
+                    {
+                        distancia[v] = distancia[u] + arista.distancia;
+                    }
+                }
+
+                arista = arista.sig;
             }
         }
-        Console.WriteLine("\nCAMINOS MÁS CORTOS");
+
+        Console.WriteLine("\n===== CAMINOS MÁS CORTOS =====\n");
 
         for (int i = 0; i < n; i++)
         {
-            Console.WriteLine("Agencia " + (i + 1) + ": " + distancia[i] + " km");
+            if (distancia[i] == 99999)
+                Console.WriteLine(vertices[i].dato.nombre + " : No hay ruta");
+            else
+                Console.WriteLine(vertices[i].dato.nombre + " : " + distancia[i] + " km");
         }
     }
 

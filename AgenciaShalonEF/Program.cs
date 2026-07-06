@@ -11,7 +11,7 @@ namespace AgenciaShalonEF
     {
         static void Main(string[] args)
         {
-            Grafo g = new Grafo(8);
+            Grafo g = new Grafo(9);
             float total = 0;
 
             g.GenerarMatriz();
