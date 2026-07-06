@@ -137,6 +137,7 @@ public class Grafo
             temp = temp.sig;
         }
         total += temp.distancia;
+        Console.Clear();
         Recorrer(temp.destino, ref total);
     }
     public void ContarConexiones()
